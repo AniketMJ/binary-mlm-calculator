@@ -31,7 +31,6 @@
             letter-spacing: auto;
         }
         .my-p1 {
-            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             font-size: 16px;
@@ -44,6 +43,9 @@
         }
         .neutral-400 {
             color: #1B668F;
+        }
+        .neutral-500 {
+            color: #065179;
         }
         .neutral-600 {
             color: #034163;
@@ -80,6 +82,14 @@
             text-decoration: none;
             background-color: #F71771;
             box-shadow: 1px 1px 6px 1px rgba(230, 92, 138, 0.4), 2px 2px 8px 2px rgba(230, 92, 138, 0.3), 4px 4px 16px 4px rgba(230, 92, 138, 0.1);
+        }
+
+        .required::after {
+            content: '*';
+            color: #EE3535;
+            font-size: 20px;
+            margin-left: 3px;
+            margin-top: -2px;
         }
 
         @media (min-width: 768px) { 
@@ -130,7 +140,7 @@
     <main>
         <section class="mt-4">
             <div class="container">
-                <div class="col-lg-10 mx-auto text-center">
+                <div class="col-md-10 mx-auto text-center">
                     <p class="h6 font-weight-bold neutral-300 m-0 ">Free Binary MLM Calculator by Global MLM Software</p>
                     <h1 class="my-h1 neutral-600 mt-2">Validate Your Business Plan with our Binary Calculator</h1>
                     <p class="my-p1 neutral-300 col-md-12 col-lg-10 col-xl-8 mt-3 mt-lg-4 mx-auto mt-3">The Binary MLM Calculator calculates and analyzes the various commissions, fees, deductions, bonuses, etc. Use 'Global MLM Software' to calculate commissions and bonuses, and analyze profit and expense.</p>
@@ -140,11 +150,57 @@
         </section>
 
         <section class="mt-5 bg-secondary-100">
-            <img src="./assets/hero--wave-down.svg" alt="" class="">
+            <img src="./assets/hero--wave-down.svg" alt="">
             <div class="container">
-                <div class="p-5"></div>
+                <div class="row flex-column-reverse flex-lg-row align-items-center justify-content-lg-center mx-auto text-center text-lg-left">
+                    <div class="col-9 col-md-7 col-lg-4">
+                        <img src="./assets/avatar-connecting-img.png" alt="" class="w-100">
+                    </div>
+                    <div class="col-md-10 col-lg-5 neutral-500">
+                        <h5 class="font-weight-bold">This tool will help you calculate commissions for your multi-level marketing efforts.</h6>
+                        <p class="h6 mt-2 mt-lg-4">The commission of this plan is distributed based on matching pairs from Left leg & Right leg of a distributor. Pairs are been matched in a defined ration likewise 1:2, 2:1, 1:1, etc.</p>
+                        <p class="h6 mt-0 mt-lg-3">The other common commissions are on bringing no of new distributors in network, no of spills been placed in network some kind of Awards & rewards on achieving particular targets to grow the network.</p>
+                        <p class="h6 mt-0 mt-lg-3">Royalty commission is also a trend in Binary which is based on usually company turnover, and it’s been achieved by those who plays a vital role in growth of network.</p>
+                    </div>
+                </div>
             </div>
             <img src="./assets/hero--wave-up.svg" alt="" class="mb-n5">
+        </section>
+
+        <section class="mt-5">
+            <div class="container">
+                <div>
+                    <h2 class="my-h2 neutral-500 text-center">Enter Your Business Details to Calculate</h2>
+                    <form class="mt-4">
+                        <fieldset>
+                            <h6 class="font-weight-bold neutral-400">Step 1/2: Enter your information</h6>
+                            <div class="row mt-2 neutral-300">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="name" class="mt-1 required">Your name</label>
+                                        <input type="text" id="name" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country" class="mt-1 required">Country name</label>
+                                        <input type="text" id="country" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="phone" class="mt-1 required">Phone no.</label>
+                                        <input type="tel" id="phone" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="mt-1 required">Email address</label>
+                                        <input type="email" id="email">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div></div>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 
