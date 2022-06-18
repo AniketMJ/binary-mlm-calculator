@@ -53,6 +53,9 @@
         .bg-secondary-100 {
             background-color: #FEF6F9;
         }
+        .bg-neutral-200 {
+            background-color: #638B9C;
+        }
 
         /* Components */
         .btn {
@@ -61,7 +64,6 @@
             box-shadow: none;
             font-size: 1rem;
             text-transform: uppercase;
-            /* padding: 1rem 2.375rem; */
             padding: .8rem 1.5rem;
             transition: .3s;
             position: relative;
@@ -82,6 +84,27 @@
             text-decoration: none;
             background-color: #F71771;
             box-shadow: 1px 1px 6px 1px rgba(230, 92, 138, 0.4), 2px 2px 8px 2px rgba(230, 92, 138, 0.3), 4px 4px 16px 4px rgba(230, 92, 138, 0.1);
+        }
+        .btn--bg-neutral {
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: 600;
+            color: #FEF6F9;
+            background-color: #1B668F;
+            transition: transform 200ms linear;
+            box-shadow: 1px 1px 6px 1px rgba(99, 139, 156, 0.4),
+                        2px 2px 8px 2px rgba(99, 139, 156, 0.3),
+                        4px 4px 16px 4px rgba(99, 139, 156, 0.1);
+
+        }
+        .btn--bg-neutral:hover {
+            transform: translateY(-4px);
+            color: #FFFFFF;
+            text-decoration: none;
+            background-color: #1B668F;
+            box-shadow: 1px 1px 6px 1px rgba(99, 139, 156, 0.4),
+                        2px 2px 8px 2px rgba(99, 139, 156, 0.3),
+                        4px 4px 16px 4px rgba(99, 139, 156, 0.1);
         }
 
         .required::after {
@@ -140,7 +163,7 @@
     <main>
         <section class="mt-4">
             <div class="container">
-                <div class="col-md-10 mx-auto text-center">
+                <div class="col-md-11 col-lg-10 mx-auto text-center">
                     <p class="h6 font-weight-bold neutral-300 m-0 ">Free Binary MLM Calculator by Global MLM Software</p>
                     <h1 class="my-h1 neutral-600 mt-2">Validate Your Business Plan with our Binary Calculator</h1>
                     <p class="my-p1 neutral-300 col-md-12 col-lg-10 col-xl-8 mt-3 mt-lg-4 mx-auto mt-3">The Binary MLM Calculator calculates and analyzes the various commissions, fees, deductions, bonuses, etc. Use 'Global MLM Software' to calculate commissions and bonuses, and analyze profit and expense.</p>
@@ -156,7 +179,7 @@
                     <div class="col-9 col-md-7 col-lg-4">
                         <img src="./assets/avatar-connecting-img.png" alt="" class="w-100">
                     </div>
-                    <div class="col-md-10 col-lg-5 neutral-500">
+                    <div class="col-md-11 col-lg-5 neutral-500">
                         <h5 class="font-weight-bold">This tool will help you calculate commissions for your multi-level marketing efforts.</h6>
                         <p class="h6 mt-2 mt-lg-4">The commission of this plan is distributed based on matching pairs from Left leg & Right leg of a distributor. Pairs are been matched in a defined ration likewise 1:2, 2:1, 1:1, etc.</p>
                         <p class="h6 mt-0 mt-lg-3">The other common commissions are on bringing no of new distributors in network, no of spills been placed in network some kind of Awards & rewards on achieving particular targets to grow the network.</p>
@@ -169,35 +192,120 @@
 
         <section class="mt-5">
             <div class="container">
-                <div>
+                <div class="col-lg-10 mx-auto">
                     <h2 class="my-h2 neutral-500 text-center">Enter Your Business Details to Calculate</h2>
                     <form class="mt-4">
                         <fieldset>
-                            <h6 class="font-weight-bold neutral-400">Step 1/2: Enter your information</h6>
-                            <div class="row mt-2 neutral-300">
-                                <div class="col">
-                                    <div class="form-group">
+                            <h6 class="font-weight-bold neutral-400 text-center">Step 1/2: Enter your information</h6>
+                            <div class="row flex-md-column mt-2 neutral-300">
+                                <div class="col-12 d-md-flex">
+                                    <div class="form-group col-md-6">
                                         <label for="name" class="mt-1 required">Your name</label>
                                         <input type="text" id="name" class="form-control">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group col-md-6">
                                         <label for="country" class="mt-1 required">Country name</label>
                                         <input type="text" id="country" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group">
+                                <div class="col-12 d-md-flex">
+                                    <div class="form-group col-md-6">
                                         <label for="phone" class="mt-1 required">Phone no.</label>
                                         <input type="tel" id="phone" class="form-control">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group col-md-6">
                                         <label for="email" class="mt-1 required">Email address</label>
-                                        <input type="email" id="email">
+                                        <input type="email" id="email" class="form-control">
                                     </div>
                                 </div>
                             </div>
                         </fieldset>
-                        <div></div>
+                        <fieldset class="mt-4">
+                            <h6 class="font-weight-bold neutral-400 text-center">Step 2/2: Enter your business information</h6>
+                            <div class="row flex-md-column mt-2 neutral-300">
+                                <div class="col-12 d-md-flex">
+                                    <div class="form-group col-md-6">
+                                        <label for="pkg-cost" class="mt-1 required">Package cost</label>
+                                        <div class="input-group p-0 mb-3">
+                                            <input type="number" id="pkg-cost" class="form-control">
+                                            <div class="input-group-append">
+                                              <span class="input-group-text text-white font-weight-bold bg-neutral-200" id="basic-addon2">USD</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="levels" class="mt-1 required">Number of levels</label>
+                                        <input type="number" id="levels" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 d-md-flex">
+                                    <div class="form-group col-md-6">
+                                        <label class="mt-1 required">Pair type (1:1 or 1:2, 2:1)</label>
+                                        <div class="d-flex">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios" id="option1">
+                                                <label class="form-check-label" for="option1">
+                                                  1:1
+                                                </label>
+                                            </div>
+                                            <div class="form-check ml-4">
+                                                <input class="form-check-input" type="radio" name="exampleRadios" id="option2">
+                                                <label class="form-check-label" for="option2">
+                                                  1:2 or 2:1
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="capping" class="mt-1 required">Capping (5 pairs per day)</label>
+                                        <input type="number" id="capping" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 d-md-flex">
+                                    <div class="form-group col-md-6">
+                                        <label for="binary-bonus" class="mt-1 required">Binary matching bonus</label>
+                                        <div class="input-group p-0 mb-3">
+                                            <input type="number" id="binary-bonus" aria-describedby="basic-addon2" class="form-control">
+                                            <div class="input-group-append">
+                                              <span class="input-group-text text-white font-weight-bold bg-neutral-200" id="basic-addon2">USD</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="sponsor-bonus" class="mt-1 required">Sponsor matching bonus</label>
+                                        <div class="input-group p-0 mb-3">
+                                            <input type="number" id="sponsor-bonus" aria-describedby="basic-addon2" class="form-control">
+                                            <div class="input-group-append">
+                                              <span class="input-group-text text-white font-weight-bold bg-neutral-200" id="basic-addon2">USD</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-md-flex">
+                                    <div class="form-group col-md-6">
+                                        <label for="prod-cost" class="mt-1 required">Product cost</label>
+                                        <div class="input-group p-0 mb-3">
+                                            <input type="number" id="prod-cost" aria-describedby="basic-addon2" class="form-control">
+                                            <div class="input-group-append">
+                                              <span class="input-group-text text-white font-weight-bold bg-neutral-200" id="basic-addon2">USD</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="admin-charges" class="mt-1 required">Admin charges</label>
+                                        <div class="input-group p-0 mb-3">
+                                            <input type="number" id="admin-charges" aria-describedby="basic-addon2" class="form-control">
+                                            <div class="input-group-append">
+                                              <span class="input-group-text text-white font-weight-bold bg-neutral-200" id="basic-addon2">%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="d-flex justify-content-center  mt-4">
+                            <button type="submit" class="btn btn--bg-neutral">Calculate</button>
+                        </div>
                     </form>
                 </div>
             </div>
