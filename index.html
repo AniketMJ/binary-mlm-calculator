@@ -67,15 +67,6 @@
         }
 
         /* Components */
-        #result-sec.active {
-            max-height: 50rem;
-            overflow-y: auto;
-        }
-        #result-sec {
-            max-height: 1.5rem;
-            overflow-y: hidden;
-            transition: max-height 200ms ease-in-out;
-        }
         .btn {
             border: 0;
             outline: 0;
@@ -131,6 +122,16 @@
             font-size: 20px;
             margin-left: 3px;
             margin-top: -2px;
+        }
+
+        #result-sec.active {
+            max-height: 50rem;
+            overflow-y: auto;
+        }
+        #result-sec {
+            max-height: 1.5rem;
+            overflow-y: hidden;
+            transition: max-height 200ms ease-in-out;
         }
 
         @media (min-width: 768px) { 
@@ -487,13 +488,46 @@
             <img src="./assets/hero--wave-up.svg" alt="" class="mb-n5">
 
         </section>
+
     </main>
+
+    <!-- Popup -->
+    <div id="popup" class="modal fade" role="modal">
+        <div class="container">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="modal-header">
+                            <div class="modal-title">
+                                <h2 class="my-h2 neutral-500">Have you filled the form yet?</h2>
+                                </div>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body mx-auto d-flex flex-column justify-content-center mt-3">
+                            <p class="my-p1 neutral-300 text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam ex consectetur veritatis molestiae, quos pariatur totam vel, alias nisi debitis ipsa dolorem voluptatum rerum optio</p>
+                            <img src="./assets/avatar-connecting-img.png" class="w-100 mx-auto col-10 col-lg-8 mt-3" alt="">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn--bg-neutral">Show me a demo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="mt-5 py-5 d-flex justify-content-center">
+        <button class="btn btn-success mx-auto" data-toggle="modal" data-target="#popup">Open the popup</button>
+
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
     <script>
         const mlmCalculator = document.querySelector('#mlm-calculator')
         const resultSec = document.querySelector('#result-sec')
-        mlmCalculator.addEventListener('click', e => {
+        
+        mlmCalculator.addEventListener('submit', e => {
             e.preventDefault()
             resultSec.classList.add('active')
             const ctx = document.getElementById('myChart').getContext('2d');
