@@ -50,11 +50,20 @@
         .neutral-600 {
             color: #034163;
         }
+        .bg-primary-300 {
+            background-color: #A3DFF5;
+        }
+        .bg-primary-400 {
+            background-color: #40A6DB;
+        }
         .bg-secondary-100 {
             background-color: #FEF6F9;
         }
         .bg-neutral-200 {
             background-color: #638B9C;
+        }
+        .bg-neutral-600 {
+            background-color: #034163;
         }
 
         /* Components */
@@ -190,7 +199,7 @@
             <img src="./assets/hero--wave-up.svg" alt="" class="mb-n5">
         </section>
 
-        <section class="mt-5">
+        <section class="mt-5" id="binary-mlm-calculator">
             <div class="container">
                 <div class="col-lg-10 mx-auto">
                     <h2 class="my-h2 neutral-500 text-center">Enter Your Business Details to Calculate</h2>
@@ -310,8 +319,132 @@
                 </div>
             </div>
         </section>
+
+        <section class="mt-5">
+            <div class="container">
+                <div class="col-lg-10 mx-auto">
+
+                    <h2 class="my-h2 neutral-500 text-center">Results</h2>
+    
+                    <div class="mt-3 m-0 p-0 d-lg-flex">
+                        <div class="col-md-10 col-lg-8 mx-auto">
+                            <canvas id="myChart"  class="" aria-label="Pie chart showing the results of the calculation">
+                                <p>This browser doesn't support canvas element <br> Please update your browser</p>
+                            </canvas>
+                        </div>
+                        <div class="text-white mx-auto mt-4 col-md-10 col-lg-4">
+                            <div class="row flex-lg-column align-items-lg-stretch">
+                                <div class="col-6 col-lg-12 text-center py-3 bg-neutral-600">
+                                    <small>Toatal members</small>
+                                    <h5 class="font-weight-bold">67.1 M</h5>
+                                </div>
+                                <div class="col-6 col-lg-12 text-center py-3 bg-primary-300">
+                                    <small>Tax deduction</small>
+                                    <h5 class="font-weight-bold">37.1 M</h5>
+                                </div>
+                            </div>
+                            <div class="row flex-lg-column justify-content-lg-stretch">
+                                <div class="col-6 col-lg-12 text-center py-3 bg-primary-400">
+                                    <small>Joining fee</small>
+                                    <h5 class="font-weight-bold">17.1 M</h5>
+                                </div>
+                                <div class="col-6 col-lg-12 text-center py-3 bg-neutral-200">
+                                    <small>Product investment</small>
+                                    <h5 class="font-weight-bold">15.1 M</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 mt-md-5 table-responsive">
+                        <table class="table">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">Levels</th>
+                                <th scope="col">Members in level</th>
+                                <th scope="col">Downline members</th>
+                                <th scope="col">Total commission</th>
+                                <th scope="col">Capped commission</th>
+                                <th scope="col">Net commission</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">0</th>
+                                <td>1</td>
+                                <td>67.1 M</td>
+                                <td>3.4 B</td>
+                                <td>3.3 B</td>
+                                <td>10 M</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>1</td>
+                                <td>67.1 M</td>                                <td>3.4 B</td>
+                                <td>3.3 B</td>
+                                <td>10 M</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>1</td>
+                                <td>67.1 M</td>
+                                <td>3.4 B</td>
+                                <td>3.3 B</td>
+                                <td>10 M</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>1</td>
+                                <td>67.1 M</td>
+                                <td>3.4 B</td>
+                                <td>3.3 B</td>
+                                <td>10 M</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">4</th>
+                                <td>1</td>
+                                <td>67.1 M</td>
+                                <td>3.4 B</td>
+                                <td>3.3 B</td>
+                                <td>10 M</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">5</th>
+                                <td>1</td>
+                                <td>67.1 M</td>
+                                <td>3.4 B</td>
+                                <td>3.3 B</td>
+                                <td>10 M</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Total members', 'Tax deduction', 'Joining fee', 'Product investment'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [67.1, 37.1, 17.1, 15.1],
+                    backgroundColor: [
+                        'rgba(53, 105, 130, 1)',
+                        'rgba(163, 223, 245, 1)',
+                        'rgba(64, 166, 219, 1)',
+                        'rgba(99, 139, 156, 1)'
+                    ]
+                }]
+            }
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
